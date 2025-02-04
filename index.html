@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>página especial</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+        <header>
+            <nav class="navegation-index">
+                <div>
+                    <a href="index.html">Home</a>
+                </div>
+                <div>
+                    <a href="./html/universe.html">Universe</a>
+                    
+                </div>
+                <div>
+                    <a href="./libro/index-libro.html">libro</a>
+                </div>
+                
+                <div>
+                    <a href="">...</a>
+                </div>
+                
+            </nav>
+                
+            
+        </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>Bienvenida a Tu Página Especial 💕</h1>
+        <p>Selecciona cómo te sientes hoy y recibe un mensaje especial.</p>
+
+        <!-- Encuesta -->
+        <div class="survey">
+            <label for="emotionSelect">¿Cómo te sientes hoy?</label>
+            <select id="emotionSelect">
+                <option value="">Selecciona una emoción</option>
+                <option value="triste">Me siento triste</option>
+                <option value="feliz">Me siento feliz</option>
+                <option value="ansiosa">Me siento ansiosa</option>
+                <option value="enojada">Me siento enojada</option>
+            </select>
+            <button id="generateMessage">Generar mensaje</button>
+        </div>
+
+        <div class="dia">
+            <button onclick="mensDia();" id="mensajeDia" value="mensajeDia">Frase del dia</button>
+        </div>
+        
+        <!-- Área de mensaje -->
+        <div class="message-area">
+            <p id="messageOutput"></p>
+        </div>
+        
+        <!-- Contenedor Poema para ti (Debajo de la encuesta) -->
+            <h1>---------------------</h1>
+        <div class="poema-container">
+            <h2>Poema para ti</h2>
+            <p id="poema"></p> 
+            <!-- Aquí se insertará el poema -->
+        </div>
+    </div>
+
+    <!-- Contenedor para música recomendada -->
+    <div class="music-container">
+        <h3>Música recomendada </h3>
+        <h5>presiona en el nombre</h5>
+        <ul >
+            <li><a href="https://www.youtube.com/watch?v=fSs3xbbE7Lk&ab_channel=Be%C3%A9le-Topic" target="_blank">¿si te interesa?</a></li>
+            <li><a href="https://www.youtube.com/watch?v=cSx_dOdyqNk&ab_channel=Be%C3%A9le-Topic" target="_blank">Loco...</a></li>
+            <li><a href="https://www.youtube.com/watch?v=uswZszIYTj0&ab_channel=HEREDERO" target="_blank">Coqueta...</a></li>
+        </ul>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

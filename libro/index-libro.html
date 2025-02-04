@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tú y Yo en Otros Universos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Marcellus&display=swap">
+    <link rel="stylesheet" href="style-libro.css">
+</head>
+<body>
+    <header>
+        <nav class="navegation-index">
+            <div>
+                <a href="../index.html">Home</a>
+            </div>
+            <div>
+                <a href="../html/universe.html">Universe</a>
+                
+            </div>
+            <div>
+                <a href="">...</a>
+            </div>
+        </nav>
+            
+        
+    </header>
+
+    <!-- Contenedor del reproductor de audio -->
+    <div class="audio-wrapper">
+        <audio controls class="audio-player">
+            <source src="sound/music2.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <!-- Contenedor principal del flipbook -->
+    <div class="flipbook-container">
+        <div class="flipbook">
+            <!-- Portada -->
+            <div class="page active" id="titulo">
+                <div class="page-bg" style="background-image: url('image/titulo.jpg')"></div>
+                <div class="page-content">
+                    <h1 class="page-text">Tú y yo en otros universos</h1>
+                </div>
+            </div>
+
+            <!-- Página 1 -->
+            <div class="page" id="page1">
+                <div class="page-bg" style="background-image: url('image/fondo_page1.jpg')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/page1_3d.png')"></div>
+                    <h1 class="page-text">Que eligen una pareja para toda la vida</h1>
+                </div>
+                
+            </div>
+            
+
+            <!-- Página 2 -->
+            <div class="page" id="page2">
+                <div class="page-bg" style="background-image: url('image/fondo_page2.png')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/3d.png')"></div>
+                    <h1 class="page-text">Construyendo un amor único en el espacio</h1>
+                </div>
+            </div>
+
+            <!-- Página 3 -->
+            <div class="page" id="page3">
+                <div class="page-bg" style="background-image: url('image/fondo_page3.jpg')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/page3_3d.png')"></div>
+                    <h1 class="page-text">Que encuentren a su pareja y bailen en el océano</h1>
+                </div>
+            </div>
+
+            <!-- Página 4 -->
+            <div class="page" id="page4">
+                <div class="page-bg" style="background-image: url('image/fondo_page4.jpg')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/page4-3d.png')"></div>
+                    <h1 class="page-text">Dos almas distintas, pero hechas para encontrarse y brillar juntas</h1>
+                </div>
+            </div>
+
+            <!-- Página 5 -->
+            <div class="page" id="page5">
+                <div class="page-bg" style="background-image: url('image/fondo_page5.jpg')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/page5-3d.png')"></div>
+                    <h1 class="page-text">En medio de la selva, él la encontró, y ella le enseñó que el amor es el cielo infinito</h1>
+                </div>
+            </div>
+
+            <!-- Página 6 -->
+            <div class="page" id="page6">
+                <div class="page-bg" style="background-image: url('image/fondo_page6.jpg')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/page6-3d.png')"></div>
+                    <h1 class="page-text">Que compartieron una vida de amor</h1>
+                </div>
+            </div>
+
+            <!-- Página 7 -->
+            <div class="page" id="page7">
+                <div class="page-bg" style="background-image: url('image/fondo_page7.avif')"></div>
+                <div class="page-content">
+                    <div class="image-3d" style="background-image: url('image/page7_3d.png')"></div>
+                    <h1 class="page-text">Él vio más allá de lo visible, y ella encontró la belleza en lo inesperado</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="navigation">
+            <button class="nav-btn" id="prev" aria-label="Página anterior">&lsaquo;</button>
+            <div class="page-indicator">
+                <span class="current-page">1</span>/<span class="total-pages">7</span>
+            </div>
+            <button class="nav-btn" id="next" aria-label="Página siguiente">&rsaquo;</button>
+        </div>
+    </div>
+
+    <script src="libro.js"></script>
+</body>
+</html>

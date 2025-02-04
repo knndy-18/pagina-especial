@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italianno&family=Poppins:wght@100;400;700&display=swap');
+
+:root {
+    --primary-color: #d81b60;
+    --primary-hover-color: #c2185b;
+    --secondary-color: #f8cdda;
+    --color-primary: #c2185b;
+    --color-secondary: #f8cdda;
+    --color-accent: #f8cdda;
+    --color-text: #fbfbfb;
+    --font-title: 'Cinzel Decorative', cursive;
+    --font-body: 'Marcellus', serif;
+    --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    --shadow-deep: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navegación */
+
+/* Navegación */
+.navegation-index {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem 2rem;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: var(--glass-effect);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navegation-index a {
+    color: var(--background-color);
+    background: var(--primary-color);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family:"Poppins", sans-serif;
+    font-size: 1.1rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navegation-index a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+    background: var(--primary-hover-color);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle at center, var(--color-primary) 0%, #000000 100%);
+    font-family: var(--font-body);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Reproductor de audio */
+.audio-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: var(--shadow-deep);
+}
+
+.audio-player {
+    width: 200px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Contenedor principal */
+.flipbook-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 600px;
+    margin: 100px auto;
+    perspective: 2000px;
+}
+
+.flipbook {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* Estilos de página */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transform-origin: left center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-deep);
+    backface-visibility: hidden;
+}
+
+.page-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7) contrast(1.1);
+    transition: var(--transition);
+}
+
+.page-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.image-3d {
+    width: 250px;
+    height: 250px;
+    margin: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    transform: translateZ(40px);
+    transition: var(--transition);
+    animation: float 4s ease-in-out infinite;
+}
+
+.page-text {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, var(--color-accent), var(--color-primary));
+   
+    max-width: 80%;
+}
+
+/* Navegación */
+.navigation {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px var(--color-accent);
+}
+
+.page-indicator {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Animaciones */
+@keyframes float {
+    0%, 100% { transform: translateZ(40px) rotate(0deg); }
+    50% { transform: translateZ(60px) rotate(3deg); }
+}
+
+@keyframes pageTurn {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(-180deg); }
+}
+
+/* Media Queries mejoradas */
+@media (max-width: 992px) {
+    .page-text {
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+    }
+    
+    .image-3d {
+        width: min(200px, 35vw);
+        height: min(200px, 35vw);
+    }
+    .audio-wrapper {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .flipbook-container {
+        height: min(450px, 80vh);
+        margin: clamp(3rem, 8vh, 4rem) auto;
+    }
+    
+    .page-content {
+        padding: 1rem;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .audio-wrapper {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        line-height: 1.4;
+    }
+    
+    .flipbook-container {
+        height: min(350px, 70vh);
+        margin: 2rem auto;
+    }
+    
+    .page-text {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        padding: 0.5rem 1rem;
+    }
+    
+    .audio-wrapper {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem auto;
+    }
+    
+    .navigation {
+        bottom: -50px;
+    }
+}
+
+@media (hover: none) {
+    .nav-btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

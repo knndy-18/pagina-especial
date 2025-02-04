@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italianno&family=Poppins:wght@100;400;700&display=swap');
+
+:root {
+    /* Colores */
+    --primary-color: #d81b60;
+    --primary-hover-color: #c2185b;
+    --secondary-color: #f8cdda;
+    --secondary-gradient: #1fc8db;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --background-color: #fff9fb;
+    --message-bg-color: #ffe4e1;
+    --music-bg-color: #f0f8ff;
+    --poem-bg-color: #f879bf6a;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --glass-effect: rgba(255, 255, 255, 0.9);
+
+    /* Tipografía */
+    --font-main: "Poppins", sans-serif;
+    --font-title: "Great Vibes", cursive;
+    --font-body: "Poppins", sans-serif;
+    --font-button: "Poppins", sans-serif;
+    --font-poem: "Italianno", cursive;
+
+    /* Transiciones */
+    --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.4s ease-in-out;
+}
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    text-align: center;
+    font-family: var(--font-main);
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-gradient));
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background: var(--background-color);
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: var(--transition-slow);
+    overflow: hidden;
+}
+
+.container:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 100%
+    );
+    animation: rotateBG 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateBG {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navegación */
+.navegation-index {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem 2rem;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: var(--glass-effect);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navegation-index a {
+    color: var(--background-color);
+    background: var(--primary-color);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: var(--font-button);
+    font-size: 1.1rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navegation-index a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+    background: var(--primary-hover-color);
+}
+
+/* Títulos */
+h1,h2 {
+    color: var(--primary-color);
+    font-family: var(--font-title);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Formularios */
+.survey {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.survey select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    background: white;
+    appearance: none;
+    transition: var(--transition-fast);
+}
+
+.survey select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(216, 27, 96, 0.1);
+}
+
+/* Botones */
+button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+button:hover {
+    background: var(--primary-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+}
+
+/* Mensajes */
+.message-area {
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--message-bg-color);
+    max-width: 800px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#messageOutput {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    animation: textScale 0.4s ease-out;
+}
+
+@keyframes textScale {
+    from { transform: scale(0.98); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Música */
+.music-container {
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--music-bg-color);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.music-container h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-family: var(--font-title);
+}
+
+.music-container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.music-container li {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.music-container li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Poema */
+.poema-container {
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: var(--poem-bg-color);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    animation: slideInRight 0.7s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.poema-container p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 1.5rem 0;
+    font-family: var(--font-main);
+    color: #4a4a4a;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .container {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .navegation-index {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 0.5rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .music-container li {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.2rem;
+    }
+
+    .navegation-index a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .poema-container p {
+        font-size: 1.3rem;
+    }
+}
